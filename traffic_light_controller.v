@@ -26,7 +26,7 @@ always @(posedge clk or negedge reset) begin
         side_light = 2'b10;   // side red
     end
     else begin
-            // state transitions when timer expires
+            
         case (state)
             s0: begin
                 if (car_detected == 1) begin
@@ -67,7 +67,7 @@ always @(posedge clk or negedge reset) begin
             end
                 
             default: begin
-                state = 3'b000;  // recovery
+                state = 3'b000;  
                 #50
                 main_light = 2'b00;
                 side_light = 2'b10;
